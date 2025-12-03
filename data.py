@@ -136,6 +136,7 @@ transform = transforms.Compose([
 ])
 """train_loader = DataLoader(train_set, batch_size=32, shuffle=True)"""
 
+"""
 dataset = ImageFolder("Data/", transform=transform)
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 train_size = int(0.8 * len(dataset))
@@ -177,6 +178,7 @@ for epoch in range(50):
     val_loss = 0
     val_acc = 0
     """"non calculating gradients"""
+"""
     with torch.no_grad():
         for images, labels in val_loader:
             outputs = model(images)
@@ -198,3 +200,4 @@ for epoch in range(50):
         torch.save(model.state_dict(), "best_emotion_model.pth")
         print(f"Saved new best model with val_acc={best_val_acc:.4f}")
 
+"""
